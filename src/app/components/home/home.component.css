@@ -1,0 +1,51 @@
+
+.button {
+    width: auto;
+    height: auto;
+    margin: 15px; 
+    box-shadow: 0 12px 16px 0 rgba(0, 98, 255, 0.389), 0 17px 50px 0 rgba(255, 251, 1, 0.297);
+    font-size: 20px;
+    display: block;
+    margin-left: 40px;
+    top: 20px;
+    padding: 10px;
+    border-bottom-style: solid;
+    background-color: rgb(255, 196, 0)
+} 
+
+.example-card {
+    max-width: 400px;
+    min-height: auto;
+    margin: 40px;
+    position:relative;      
+                -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+                -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+                box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+  }
+
+  .containerr {
+    border-color: black;
+    display: flex;
+    height: 80%;
+    width: 100%;
+    flex-wrap: wrap;   
+  }
+
+  .settings{
+    display: flex;
+    margin-bottom: 30px;
+    height: 10%;
+    width: 100%;
+  }
+
+  .filters {
+     margin-top: 10px;
+     width: 15%;
+     float: right;
+    
+  }
+
+  .new{ 
+    width: 20%;
+    float: left;
+  }

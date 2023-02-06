@@ -1,0 +1,87 @@
+<h1 mat-Dialog-Title style="margin: 10px;">Agregar Nueva Persona</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="validateForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input formControlName="name" matInput placeholder="Name">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Seleccione Tipo de astronave</mat-label>
+      <mat-select  (selectionChange)="getCategory($event.value)">
+        <mat-option value="Vehiculo Lanzadera">Vehiculo Lanzadera</mat-option>
+        <mat-option value="Vehiculo no tripulado">Vehiculo no tripulado</mat-option>
+        <mat-option value="Vehiculo tripulado">Vehiculo tripulado</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>toneladas de empuje</mat-label>
+      <input type="number" formControlName="tons_of_thrust" matInput placeholder="tons Of Thrust">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Peso (Toneladas)</mat-label>
+      <input type="number" formControlName="tons_of_weight" matInput placeholder="tonsOfWeight">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Tipo combustible</mat-label>
+      <input formControlName="type_fuel" matInput placeholder="type Fuel">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Altura</mat-label>
+      <input type="number" formControlName="height" matInput placeholder="height">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Pais</mat-label>
+      <input formControlName="country" matInput placeholder="country">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Objectivo</mat-label>
+      <input formControlName="objective" matInput placeholder="objective">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Capacidad de personas</mat-label>
+      <input type="number" formControlName="people_capacity" matInput placeholder="peopleCapacity">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Capacidad de Carga</mat-label>
+      <input type="number" formControlName="transport_capacity" matInput placeholder="transportCapacity">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Velocidad Maxima</mat-label>
+      <input type="number" formControlName="massive_speed" matInput placeholder="massiveSpeed">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Sistema de propulsion</mat-label>
+      <input formControlName="propulsion_system" matInput placeholder="propulsionSystem">
+    </mat-form-field>
+
+    <mat-label>Estado nave espacial </mat-label>
+    <mat-slide-toggle  [(ngModel)]="isChecked"></mat-slide-toggle>
+    <br>
+    <br>
+    
+      <mat-label>Imagen</mat-label>
+      <input (change)="handleFileSelect($event)" type="file"  placeholder="image">
+    
+
+
+
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button (click)="save()" mat-raised-button color="warn" >Guardar</button>
+</div>

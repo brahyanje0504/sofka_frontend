@@ -1,0 +1,66 @@
+<div class="settings">
+  <div class="new">
+    <button class="button" (click)="openCreate()" mat-button color="primary">Nuevo</button>
+  </div>
+
+  <div class="filters">
+    <h4>Categoria</h4>
+    <mat-form-field appearance="fill">
+      <mat-label>Filtrar</mat-label>
+      <mat-select [(value)]="categorySelected" (selectionChange)="filterCategory($event.value)">
+        <mat-option value="Vehiculo Lanzadera">Vehiculo Lanzadera</mat-option>
+        <mat-option value="Vehiculo no tripulado">Vehiculo no tripulado</mat-option>
+        <mat-option value="Vehiculo tripulado">Vehiculo tripulado</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
+  <div class="filters">
+    <h4>Pais</h4>
+    <mat-form-field appearance="fill">
+      <mat-select [(value)]="countrySelected" (selectionChange)="filterCountry($event.value)">
+        <mat-option *ngFor="let item of countries" value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="filters">
+    <h4>Combustible</h4>
+    <mat-form-field appearance="fill">
+      <mat-select [(value)]="fuelSelected" (selectionChange)="filterFuel($event.value)">
+        <mat-option *ngFor="let item of fuels" value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="filters">
+    <h4>Activos</h4>
+    <mat-form-field appearance="fill">
+      <mat-select [(value)]="activeSelected"(selectionChange)="filterActive($event.value)">
+        <mat-option value=true>Si</mat-option>
+        <mat-option value=false>No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <button class="button" (click)="deleteFilters()" mat-button color="primary">Borrar Filtros</button>
+
+</div>
+
+<div class="containerr">
+  <mat-card *ngFor="let item of data" (click)="details(item)" class="example-card">
+    <mat-card-header>
+
+      <mat-card-title>{{item.name}}</mat-card-title>
+      <mat-card-subtitle>{{item.type_spacecraft}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src={{item.image}} alt={{item.name}}>
+    <mat-card-content>
+      <p>{{item.objective}} </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Ver mas</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
